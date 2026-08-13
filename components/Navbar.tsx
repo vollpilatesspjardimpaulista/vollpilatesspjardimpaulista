@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 const navItems = [
   { id: 'home', label: 'Início' },
-  { id: 'about', label: 'Sobre' },
-  { id: 'classes', label: 'Aulas' },
+  { id: 'benefits', label: 'Por que fazer' },
+  { id: 'space', label: 'Nosso Espaço' },
   { id: 'contact', label: 'Contato' },
 ]
 
@@ -21,7 +21,7 @@ export default function Navbar() {
           }
         })
       },
-      { root: null, threshold: 0.6 }
+      { root: null, threshold: 0.4 }
     )
 
     sections.forEach(s => s && observer.observe(s))
@@ -30,15 +30,18 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur">
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="font-bold text-lg">Voll Pilates</div>
-        <ul className="flex gap-6">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-center">
+        <ul className="flex gap-8 bg-white/25 backdrop-blur-md rounded-full px-8 py-3 items-center shadow-lg border border-white/30">
           {navItems.map(item => (
             <li key={item.id}>
               <a
                 href={item.id === 'home' ? '#' : `#${item.id}`}
-                className={`hover:opacity-80 ${active === item.id ? 'text-indigo-600 font-semibold' : 'text-gray-700'}`}
+                className={`text-sm font-semibold transition-colors ${
+                  active === item.id 
+                    ? 'text-pink-500' 
+                    : 'text-white hover:text-white/80'
+                }`}
               >
                 {item.label}
               </a>

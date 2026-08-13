@@ -1,7 +1,14 @@
 import React from 'react'
-import Hero from '../components/Hero'
+import Hero from '../components/Sobre'
 import Navbar from '../components/Navbar'
 import Section from '../components/Section'
+import FeatureGrid from '../components/FeatureGrid'
+import CTA from '../components/CTA'
+import ServicesGrid from '../components/ServicesGrid'
+import Gallery from '../components/Gallery'
+import Testimonials from '../components/Testimonials'
+import ContactSection from '../components/ContactSection'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -9,18 +16,29 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Section id="about" title="Sobre">
-          <p>Informações sobre o estúdio e os benefícios do Pilates.</p>
+        
+        <Section id="benefits" title="Por que fazer pilates?">
+          <p className="text-center text-gray-600 mb-8">O que você busca?</p>
+          <FeatureGrid />
         </Section>
-        <Section id="classes" title="Aulas">
-          <p>Tipos de aulas, horários e pacotes.</p>
+
+        <CTA />
+
+        <Section id="services" title="Além disso, nossas aulas são indicadas para:">
+          <ServicesGrid />
         </Section>
-        <Section id="team" title="Equipe">
-          <p>Apresentação dos instrutores e suas qualificações.</p>
+
+        <Section id="space" title="Conheça nosso Espaço">
+          <Gallery />
         </Section>
-        <Section id="contact" title="Contato">
-          <p>Formulário de contato, telefone e localização.</p>
+
+        <Section id="feedbacks" title="Depoimentos de nossos alunos">
+          <Testimonials />
         </Section>
+
+        <ContactSection />
+
+        <Footer />
       </main>
     </>
   )

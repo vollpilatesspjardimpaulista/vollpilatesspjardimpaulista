@@ -2,10 +2,13 @@ import React from 'react'
 
 export default function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="min-h-screen flex items-center" style={{ paddingTop: 96 }}>
-      <div className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-4">{title}</h2>
-        <div className="prose text-gray-700">{children}</div>
+    <section id={id} className="py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{title}</h2>
+          <div className="w-16 h-1 bg-pink-500 mx-auto" />
+        </div>
+        <div>{children}</div>
       </div>
     </section>
   )
